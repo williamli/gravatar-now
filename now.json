@@ -23,7 +23,7 @@
     },
     {
       "src": "/h/(.*)",
-      "dest": "https://www.gravatar.com/avatar/$1"
+      "dest": "https://www.gravatar.com/avatar/$1?s=512"
     },
     {
       "src": "/(.*)",
