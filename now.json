@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "name": "gravatar-now",
+  "alias": [
+    "gravatar.williamli.dev"
+  ],
+  "regions": ["all"],
+  "builds": [
+    { "src": "emailRoute.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { 
+      "src": "/", 
+      "dest": "https://www.gravatar.com/avatar/67a2d965c2192f0712537baee73fc15e?s=512"
+    },
+    {
+      "src": "/email/(.*)",
+      "dest": "/emailRoute.js"
+    },
+    {
+      "src": "/h/(.*)/(.*)",
+      "dest": "https://www.gravatar.com/avatar/$1?s=$2"
+    },
+    {
+      "src": "/h/(.*)",
+      "dest": "https://www.gravatar.com/avatar/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "https://www.gravatar.com/avatar/67a2d965c2192f0712537baee73fc15e?s=$1"
+    }
+  ]
+}
